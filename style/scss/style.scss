@@ -12,32 +12,145 @@ body {
 
 .container {
   background-color: $white;
+  color: $wenge-brown;
   width: 100%;
   max-width: 700px;
   border-radius: 20px;
   margin: 5% 0;
-  padding: 2.5em;
+  padding: 2.3em;
   font-family: 'Outfit', sans-serif;
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2 {
     font-family: 'YoungSerif', serif;
   }
-
   @media (max-width: 768px) {
     margin: 0;
     border-radius: 0;
   }
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  margin-bottom: 1.5em;
+
+  img {
+    border-radius: 10px;
+
+    @media (max-width: 768px) {
+      margin: -2.5em -2.5em 0 -2.5em;
+      border-radius: 0;
+    }
+}
+
+  .header--title {
+    color: $dark-charcoal;
+    margin: 0;
+  }
+
+  .header--text {
+    margin: 0;
+  }
+
+  .card {
+    background-color: $rose-white;
+    border-radius: 10px;
+    padding: .8em 1.5em;
+
+    &--title {
+      font-size: 1.1rem;
+      color: $dark-raspberry;
+    }
+
+    &--list {
+      padding: .4em;
+      display: flex;
+      flex-direction: column;
+      gap: .5em;
+      color: $dark-raspberry;
+
+      &--text {
+        display: inline-block;
+        padding: 0 1em;
+        color: $wenge-brown;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+
+        &::before {
+          content: '•';
+          margin-right: .5em;
+          font-size: 1.5rem;
+          color: $dark-raspberry;
+        }
+      }
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  article {
+    padding-bottom: 1em;
+    border-bottom: 1px solid $light-gray;
+  }
+
+  .ingredients {
+
+    &--list {
+      color: $nutmeg;
+      padding: .4em;
+      display: flex;
+      flex-direction: column;
+      gap: .5em;
+
+      &--text {
+        display: inline-block;
+        color: $wenge-brown;
+        padding: 0 1em;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+
+        &::before {
+          content: '•';
+          margin-right: .5em;
+          font-size: 1.5rem;
+          color: $nutmeg;
+        }
+      }
+    }
+  }
+
+  .instructions {
 
 
-// Image Styles
-img {
-  max-width: 100%;
-  border-radius: 10px;
+    &--list {
+      padding: .4em;
+      display: flex;
+      flex-direction: column;
+      gap: .5em;
 
-  @media (max-width: 768px) {
-    margin: -2.5em -2.5em 0 -2.5em;
-    max-width: calc(100% + 5em);
-    border-radius: 0;
+      &--text {
+        display: inline-block;
+        padding: 0 1em;
+      }
+    }
+  }
+
+  .nutrition {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  h2 {
+    color: $nutmeg;
   }
 }
