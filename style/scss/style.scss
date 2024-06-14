@@ -19,8 +19,12 @@ body {
   margin: 5% 0;
   padding: 2.3em;
   font-family: 'Outfit', sans-serif;
+  letter-spacing: .5px;
   h1, h2 {
     font-family: 'YoungSerif', serif;
+  }
+  h2 {
+    color: $nutmeg;
   }
   @media (max-width: 768px) {
     margin: 0;
@@ -55,7 +59,7 @@ header {
   .card {
     background-color: $rose-white;
     border-radius: 10px;
-    padding: .8em 1.5em;
+    padding: .5em 1.5em;
 
     &--title {
       font-size: 1.1rem;
@@ -136,21 +140,64 @@ main {
       padding: .4em;
       display: flex;
       flex-direction: column;
-      gap: .5em;
+      gap: 1em;
+      color: $nutmeg;
+      font-weight: $bolder;
+      counter-reset: item;
 
       &--text {
         display: inline-block;
         padding: 0 1em;
+        color: $wenge-brown;
+        font-weight: $regular;
       }
-    }
+
+      li {
+        display: flex;
+        align-items: flex-start;
+
+        &::before {
+          counter-increment: item;
+          content: counter(item) '.';
+          margin-right: .5em;
+          color: $nutmeg;
+        }
+      }
+  }
   }
 
   .nutrition {
     border-bottom: none;
     padding-bottom: 0;
-  }
 
-  h2 {
-    color: $nutmeg;
+    &--table {
+      width: 100%;
+      border-collapse: collapse;
+
+      &--row {
+        display: flex;
+        padding: .5em 0;
+        border-bottom: 1px solid $light-gray;
+
+        th, td {
+          position: relative;
+          left: 1.5em;
+          width: 50%;
+          text-align: left;
+        }
+
+        th {
+          font-weight: $regular;
+        }
+        td {
+          font-weight: $bolder;
+          color: $nutmeg;
+        }
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
   }
 }
