@@ -345,6 +345,7 @@ body {
 }
 .container h1, .container h2 {
   font-family: "YoungSerif", serif;
+  font-weight: 400;
 }
 .container h2 {
   color: hsl(14, 45%, 36%);
